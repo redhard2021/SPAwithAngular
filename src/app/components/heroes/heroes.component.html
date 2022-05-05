@@ -1,0 +1,21 @@
+<div class= "container pb-5">
+
+
+<h1 class="p-2">Todos los Heroes</h1>
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4 animated fadeIn">
+
+    <div class="col animated fadeIn fast" *ngFor="let heroe of heroes, let i = index">
+        <div class="card">
+          <img [src]="heroe.img" class="card-img-top" [alt]="heroe.nombre">
+          <div class="card-body">
+            <h5 class="card-title">{{heroe.nombre}}</h5>
+            <p class="card-text">{{heroe.bio}}</p>
+            <small class="text-muted">Casa: {{heroe.casa}}</small>
+          </div>
+           <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary">Ver más información</a>
+    </div>
+
+  </div >
+  

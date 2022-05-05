@@ -1,0 +1,47 @@
+<div class="container">
+
+
+<div class="col animated fadeIn fast">
+<h1>{{heroe.nombre | uppercase }} <small>( {{heroe.aparicion | date:'y'}} )</small> </h1>
+</div>
+<hr>
+
+
+<div class="row">
+ 
+    <div class="col-md-4">
+        <img [src]="heroe.img" [alt]="heroe.nombre">
+    <br><br>
+    
+    
+    </div>
+    <div class="col-md-8 animated fadeIn fast">
+        <h3>{{heroe.nombre }}</h3>
+        <hr>
+        <p>
+            {{heroe.bio}} <br> 
+        </p>
+        <div>
+            
+            <div *ngIf="heroe.casa == 'Marvel'">
+                <img class="img-logo" src="../../../assets/img/marvel.png" alt="" style="width: 200px;">
+            </div>
+            
+            <div *ngIf="heroe.casa == 'DC'">
+                <img class="img-logo" src="../../../assets/img/dc.png" alt="" style="width: 160px;">
+            </div>
+
+            <div>
+                <h4 style="user-select:none" class="mt-4">Una pelicula de este heroe:</h4>
+
+                <iframe width="660" height="415" [src]="heroe.vid | sanitizer" title="YouTube video player" frameborder="0" allow="; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+        </div>
+        <button type="button" class="btn btn-outline-danger mt-4" [routerLink]="['/heroes']">Regresar al listado</button>
+
+    </div>
+
+</div>
+</div>
+
