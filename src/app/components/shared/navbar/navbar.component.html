@@ -25,7 +25,7 @@
           </li>
         </ul>
         <p class="d-flex" style="margin-top: 1%;">
-          <input class="form-control me-2" type="search" placeholder="Buscar heroe..." aria-label="Search"  (keyup.enter)="buscarHeroe(buscarTexto.value)" #buscarTexto >
+          <input class="form-control me-2" type="search" placeholder="Buscar heroe..." aria-label="Search"  (keypress)="buscarHeroe(buscarTexto.value)" #buscarTexto >
           <button class="btn btn-outline-primary" (click)="buscarHeroe(buscarTexto.value)">Search</button>
         </p>
       </div>
